@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Our Site</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome CSS (for icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <style>
+    /* Additional custom styles can be added here */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .news {
+        margin-top: 20px;
+    }
+
+    @media screen and (max-width: 600px) {
+        /* Styles for screens with a max width of 600px (e.g., mobile phones) */
+        h1 {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        .news {
+            margin-top: 10px;
+        }
+    }
+    
+    
+    .checked_Task {
+      margin-bottom: 10px;
+      margin-right: 30px;
+      font-size: 20px;
+      text-decoration: line-through;
+      color: green;
+    }
+    .checked_circle {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: rgb(12, 196, 12);
+    margin-left: 5px;
+    margin-right: 5px;
+
+  }
+  .NOT_checked_Task{
+    margin-bottom: 10px;
+    margin-right: 30px;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    
+  }
+  .unchecked_circle {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: rgb(181, 88, 6);
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .headList {
+     font-family: "Arial", sans-serif;
+     font-size: 36px;
+     color: #007bff;
+     text-align: center;
+     letter-spacing: 2px;
+     text-transform: uppercase;
+     margin-top: 20px;
+     margin-bottom: 30px;
+     font-style: italic;
+    background-image: linear-gradient(to right, #ff0000, #ff6600, #ffcc00);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+   }
+   .list-link-edit{
+    background-color: rgb(18, 180, 88); 
+    font-size: 25px;
+    color: #ebf5ff;
+    border-radius: 555px;
+
+   }
+   .list-link-done{
+    /* background-color: rgb(39, 190, 114);  */
+    font-size: 25px;
+    color: #080ce2f0;
+    /* border: 2px solid #000; */
+    border-radius: 555px;
+
+   }
+   .todoliststyle {
+    background-color: rgb(129, 204, 250); 
+    visibility: visible;
+    border: 5px solid #000;
+    border-radius: 10px;
+   }
+
+.fa-times-circle {
+  font-size: 25px;
+  color: red;
+}
+
+    
+  </style>
+</head>
+<body>
+    <section class="text-center">
+      
+        <!-- Background image -->
+        <div class="p-5 bg-image" style="
+              background-image: url('https://mdbootstrap.com/img/new/textures/full/171.jpg');
+              height: 300px;
+              "></div>
+              
+        <!-- Background image -->
+        
+      
+        <div class="card mx-4 mx-md-5 shadow-5-strong" style="
+              margin-top: -100px;
+              background: hsla(0, 0%, 100%, 0.8);
+              backdrop-filter: blur(30px);
+              ">
+              
+              
+          <div class="card-body py-5 px-md-5">
+            
+      
+            <div class="row d-flex justify-content-center">
+              <div class="col-lg-8">
+                {% block content %} 
+
+                {% endblock %}
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <p> Hello {{user}}  <a href="{% url 'baselogout' %}">Sign Out</a>, or you wanna go <a href="{% url 'view' %}">Home</a> </p>
+        
+      </section>
+      
+    <!-- Bootstrap JS and jQuery (optional, for Bootstrap components) -->
+    {% block stylecontent %} 
+                
+    {% endblock %}
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

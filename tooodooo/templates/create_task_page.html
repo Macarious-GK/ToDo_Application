@@ -1,0 +1,14 @@
+{% extends 'Base_Todo.html' %}
+{% block content %} 
+
+<form method="post">
+    {% csrf_token %}
+    <label for="taskname">Task Name</label>
+    <input type="text" class="form-control" id="taskname" name="taskname" placeholder="Create A Task (use only letters and numbers)" Required>
+    <label for="deadline">Deadline</label>
+    <input type="datetime-local" class="form-control" id="deadline" name="deadline" placeholder="Chosse the deadline for the task: " Required>
+    <label for="discrption">Discrption</label>
+    <input type="text" class="form-control" id="discrption" name="discrption" placeholder="write a discrption for the task: " Required>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}

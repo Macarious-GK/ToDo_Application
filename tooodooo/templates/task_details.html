@@ -1,0 +1,41 @@
+{% extends 'Base_Todo.html'%}
+{% block content %} 
+<style>
+    
+  
+    .task_details_name {
+      color: #872d2d;
+      font-size: 24px;
+      margin-bottom: 10px;
+      
+    }
+  
+    .task_details {
+      color: #080202;
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+  
+    .task-container {
+      background-color: #54c7e0;
+      border-radius: 30px;
+      box-shadow: 0 2px 4px rgba(118, 32, 32, 0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+  
+    .task-container p:last-child {
+      margin-bottom: 0;
+    }
+  </style>
+  <a href="{% url 'view' %}"><span style="font-size: 30px;">&#128065;</span></a>
+  <div class="task-container">
+    <h1 class="task_details_name">Welcome {{task.user}} this is your task details: </h1>
+    <h2 class="task_details_name">Task: {{task.Name}}</h2>
+    <p class="task_details">Deadline: {{task.deadline}}</p>
+    <p class="task_details" >Description: {{task.discrption}}</p>
+    <p class="task_details" >Status: {{task.completed}}</p>
+  </div>
+
+
+{% endblock %}
