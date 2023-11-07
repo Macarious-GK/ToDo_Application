@@ -1,6 +1,37 @@
 {% extends 'Base_Todo.html' %}
 
 {% block content %}
+<div class="card" id="color-change-card">
+    <div class="card-body">
+        <h5 class="card-title">Create Category</h5>
+        <a href="{% url 'create_category' %}" class="btn btn-primary">Create</a>
+    </div>
+</div>
+<div class="card mt-3">
+    <div class="card-body">
+        <h5 class="card-title">Created Category</h5>
+        <ul class="list-unstyled custom-list">
+            {% for cat in category %}
+            <li>
+                <p>
+                    
+                <a href="{% url 'List-tasks' pk=cat.id %}" style="font-size: 25px;">{{cat.Name}}</a> || C: {{cat.Creation_day}} || P: {{cat.priority}} <a href="{% url 'delete_category' pk=cat.id %}"  ><span class="fas fa-times-circle"></span></a> || <a class="list-link-edit" href="{% url 'update_category' pk=cat.pk %}">&#9998;</a>
+                </p>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
 
-<a href="{% url 'view' %}">ToDo Application</a>
+<!-- Color Picker Input -->
+<input type="color" id="color-picker" value="#007BFF">
+<script>
+    // JavaScript to handle color change
+    const colorChangeCard = document.getElementById('color-change-card');
+    const colorPicker = document.getElementById('color-picker');
+
+    colorPicker.addEventListener('input', function () {
+        colorChangeCard.style.backgroundColor = this.value;
+    });
+</script>
 {% endblock %}

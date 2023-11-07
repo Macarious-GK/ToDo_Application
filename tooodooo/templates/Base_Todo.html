@@ -77,13 +77,13 @@
   }
   .headList {
      font-family: "Arial", sans-serif;
-     font-size: 36px;
+     font-size: 3.5vm;
      color: #007bff;
      text-align: center;
-     letter-spacing: 2px;
+     letter-spacing: 1px;
      text-transform: uppercase;
      margin-top: 20px;
-     margin-bottom: 30px;
+     margin-bottom: 20px;
      font-style: italic;
     background-image: linear-gradient(to right, #ff0000, #ff6600, #ffcc00);
     -webkit-text-fill-color: transparent;
@@ -151,7 +151,7 @@
           </div>
           
         </div>
-        <p> Hello {{user}}  <a href="{% url 'baselogout' %}">Sign Out</a>, or you wanna go <a href="{% url 'view' %}">Home</a> </p>
+        <p> Hello {{user}}  <a href="{% url 'baselogout' %}">Sign Out</a>, or you wanna go <a href="{% url 'hometodo' %}">Home</a> </p>
         
       </section>
       

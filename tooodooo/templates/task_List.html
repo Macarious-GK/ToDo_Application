@@ -37,14 +37,18 @@
 
     
     
-    
 <table>
     <tr>
-    <td><h1 class="headList"> <b>To Do List</b> </h1></td>
+    <td><h1 class="headList"> <b>To Do List : {{tasks.0.Category}}</b> </h1></td>
+    <td></td>
+    {% if  tasks.0.Category %}
+    <td><a class="list-link-done" href="{% url 'all_category_done' pk=tasks.0.Category.pk %}">&#10004;</a></td>
+    <td><a style="font-size: 40px; color: rgb(0, 255, 76);" href="{% url 'all_category_undo' pk=tasks.0.Category.pk %}">↺</a></td>
+    {% else %}
     <td></td>
     <td></td>
-    <td></td>
-    <td><a  style="font-size: 50px;" href="{% url 'create' %}">+</a></td>
+    {% endif %}
+    <td><a  style="font-size: 50px;" href="{% url 'create_Task' %}">+</a></td>
 </tr>
     
     {% for item in tasks %}
@@ -53,7 +57,7 @@
         
         <td><span class="unchecked_circle"></span><a class = "NOT_checked_Task" href="{% url 'details' pk=item.pk %}">{{ item.Name }}</a></label></td>
         <td></td>
-        <td><a class="list-link-done" href="{% url 'done' pk=item.pk %}">&#10004;</a></td>
+        <td><a class="list-link-done" href="{% url 'done' pk=item.pk%}">&#10004;</a></td>
         <td><a class="list-link-edit" href="{% url 'Update' pk=item.pk %}">&#9998;</a></td>
         <td><a  href="{% url 'delete' pk=item.pk %}" onclick="return confirm('Are you sure you want to delete this task?');"><span class="fas fa-times-circle"></span></a></td>
     </tr>
