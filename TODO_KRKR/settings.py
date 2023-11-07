@@ -21,18 +21,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-o_ispueb3ma2pe(k45#svlo@%-(cg=hol0cm!w&q5$nz)5^k(o'
+# SECRET_KEY = 'django-insecure-o_ispueb3ma2pe(k45#svlo@%-(cg=hol0cm!w&q5$nz)5^k(o'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# # SECURITY WARNING: don't run with debug turned on in production!
+# DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = ['*']
 
 
-# import os
-# SECRET_KEY = os.environ.get("SECRET_KEY")
-# DEBUG = os.environ.get("DEBUG","False").lower() == "true"
-# ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
+import os
+SECRET_KEY = os.environ.get("SECRET_KEY")
+DEBUG = os.environ.get("DEBUG","False").lower() == "true"
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
 
 
 # Application definition
@@ -94,9 +94,9 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-# database_url = os.environ.get("DATABASE_URL")
-
-# DATABASES ["default"] = dj_database_url.parse(database_url)
+database_url = os.environ.get("DATABASE_URL")
+# DATABASES ["default"] = dj_database_url.parse("postgres://macarious_centeral_database_8fwi_user:Q8lxifWd0GS6lhCAo8KvhYiSUwMKLqZR@dpg-cl563fc72pts739slksg-a.oregon-postgres.render.com/macarious_centeral_database_8fwi")
+DATABASES ["default"] = dj_database_url.parse(database_url)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
