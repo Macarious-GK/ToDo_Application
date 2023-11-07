@@ -141,4 +141,11 @@ def Un_Done_category_Tasks(request,pk):
         task.save()
     list_tasks_url = reverse('List-tasks', kwargs={'pk': pk})
     return redirect(list_tasks_url)
+
+@login_required()
+def all(request):
+    tasks = Tasks.objects.all()
+    Category = Category_task.objects.all()
+    return render(request, 'tasks_list_all_categorys.html',{'tasks':tasks,'Category':Category})
+
  

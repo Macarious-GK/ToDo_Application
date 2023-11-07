@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Macaious || ToDO</title>
+  <title>Welcome to Our Site</title>
   <!-- Bootstrap CSS -->
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome CSS (for icons) -->
@@ -115,6 +115,17 @@
   font-size: 25px;
   color: red;
 }
+.Category_table_class{
+  font-family: "Arial", sans-serif;
+  font-weight: bold; /* Make the text bold */
+  font-size: 3.5vm; /* Increase the font size */
+  background-color: #1db34f; /* Add a background color */
+  padding: 5px 40px; /* Add some padding for spacing */
+  border: 4px solid #ccc; /* Add a border at the bottom for separation */
+  margin-top: 10px; /* Add some top margin for spacing */
+  margin-right: 1px;
+
+}
 
     
   </style>
@@ -151,7 +162,7 @@
           </div>
           
         </div>
-        <p> Hello {{user}}  <a href="{% url 'baselogout' %}">Sign Out</a>, or you wanna go <a href="{% url 'hometodo' %}">Home</a> </p>
+        <p> Hello {{user}}  <a href="{% url 'baselogout' %}">Sign Out</a>, or you wanna go <a href="{% url 'hometodo' %}">Home</a> All tasks <a href="{% url 'all' %}">from here!</a> </p>
         
       </section>
       
