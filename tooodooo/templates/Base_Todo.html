@@ -32,7 +32,7 @@
         margin-top: 20px;
     }
 
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 450px) {
         /* Styles for screens with a max width of 600px (e.g., mobile phones) */
         h1 {
             font-size: 24px;
@@ -45,6 +45,35 @@
         .news {
             margin-top: 10px;
         }
+        
+        table {
+       width: 100%;
+       border-collapse: collapse;
+        }
+        
+        td {       
+            text-align: right;
+            font-size: 15px;
+
+            /* border-bottom: 1px solid #ddd; */
+        }
+        
+        td:first-child {
+            width: 30%;
+        }
+        
+        td:last-child {
+            width: 10%;
+        }
+        
+        td:nth-child(2) {
+          display: none;
+        }
+        
+        td:nth-child(3) {
+            width: 5%;
+        }
+
         
     }
     
