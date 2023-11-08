@@ -19,6 +19,7 @@
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
+        background-image: url('https://mdbootstrap.com/img/new/textures/full/175.jpg');
     }
 
     .container {
@@ -140,7 +141,7 @@
       
         <!-- Background image -->
         <div class="p-5 bg-image" style="
-              background-image: url('https://mdbootstrap.com/img/new/textures/full/171.jpg');
+              background-image: url('/static/img/back.jpg');
               height: 300px;
               "></div>
               
@@ -166,8 +167,8 @@
             </div>
           </div>
           
+          <p> Hello {{user}}  <a href="{% url 'baselogout' %}">Sign Out</a>, or you wanna go <a href="{% url 'hometodo' %}">Home</a> All tasks <a href="{% url 'all' %}">from here!</a> </p>
         </div>
-        <p> Hello {{user}}  <a href="{% url 'baselogout' %}">Sign Out</a>, or you wanna go <a href="{% url 'hometodo' %}">Home</a> All tasks <a href="{% url 'all' %}">from here!</a> </p>
         
       </section>
       
