@@ -144,8 +144,9 @@ def Un_Done_category_Tasks(request,pk):
 
 @login_required()
 def all(request):
-    tasks = Tasks.objects.all()
-    Category = Category_task.objects.all()
+    user = request.user
+    tasks = Tasks.objects.filter(user = user)
+    Category = Category_task.objects.filter(Cat_Author =user)
     return render(request, 'tasks_list_all_categorys.html',{'tasks':tasks,'Category':Category})
 
  
