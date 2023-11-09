@@ -146,7 +146,7 @@ def Un_Done_category_Tasks(request,pk):
 def all(request):
     user = request.user
     tasks = Tasks.objects.filter(user = user)
-    Category = Category_task.objects.filter(Cat_Author =user).order_by('priority')
+    Category = Category_task.objects.filter(Cat_Author =user).order_by('-priority')
     return render(request, 'tasks_list_all_categorys.html',{'tasks':tasks,'Category':Category})
 
  
