@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
+# # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = 'django-insecure-o_ispueb3ma2pe(k45#svlo@%-(cg=hol0cm!w&q5$nz)5^k(o'
 
 # # SECURITY WARNING: don't run with debug turned on in production!
@@ -95,7 +95,7 @@ DATABASES = {
     }
 }
 database_url = os.environ.get("DATABASE_URL")
-# DATABASES ["default"] = dj_database_url.parse("postgres://macarious_centeral_database_8fwi_user:Q8lxifWd0GS6lhCAo8KvhYiSUwMKLqZR@dpg-cl563fc72pts739slksg-a.oregon-postgres.render.com/macarious_centeral_database_8fwi")
+# DATABASES ["default"] = dj_database_url.parse("postgres://todo_app_om2v_user:0yAu6kqnXsQeD44CytqtyoNZxJzsVevs@dpg-cnaa5b8l5elc739600o0-a.oregon-postgres.render.com/todo_app_om2v")
 DATABASES ["default"] = dj_database_url.parse(database_url)
 
 # Password validation
@@ -184,5 +184,4 @@ EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'makariousgadelkarim@gmail.com'
-# EMAIL_HOST_PASSWORD = os.environ.get("User_Mail_Password")
-EMAIL_HOST_PASSWORD = 'izroeffbwrtkntfb'
+EMAIL_HOST_PASSWORD = os.environ.get("User_Mail_Password")
