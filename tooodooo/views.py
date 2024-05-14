@@ -13,6 +13,7 @@ from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from rest_framework.decorators import permission_classes, throttle_classes
 from rest_framework.throttling import AnonRateThrottle, UserRateThrottle
+from rest_framework.generics import ListAPIView
 from django.contrib.auth.models import User,Group
 from django.core.paginator import EmptyPage, Paginator
 
@@ -150,3 +151,6 @@ def all(request):
     return render(request, 'tasks_list_all_categorys.html',{'tasks':tasks,'Category':Category})
 
  
+class data(ListAPIView):
+    queryset = Tasks.objects.all()
+    serializer_class = task_serializer

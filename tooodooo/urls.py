@@ -19,4 +19,6 @@ urlpatterns = [
     path('update-category/<int:pk>/',update_Category.as_view(),name='update_category'),
     path('create-task/',TaskCreateView.as_view(), name='create_Task'),
     path('list-tasks/<int:pk>/',TasksListView.as_view(),name='List-tasks'),
+
+    path('test/',data.as_view()),
 ]
